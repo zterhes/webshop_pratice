@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Menubar from './components/MenuBar'
 import Products from './pages/Products'
 import About from "./pages/About";
+import SingleProductPage from './pages/SingleProductPage'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/productPage/:productId">
+          <SingleProductPage />
         </Route>
         <Route path="/">
           <Home />
