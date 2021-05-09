@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router'
 import styled from 'styled-components'
 
 const Card = styled.div`
@@ -29,13 +30,28 @@ max-width:100%;
 max-height:70%;
 `
 
-const ProductCard = ({ image, title, price }) => {
+const DetailsButton = styled.button`
+min-height: 10%;
+width:50%;
+margin-bottom:5%;
+background-color:red;
+color:white;
+`
+
+const ProductCard = ({ image, title, price, id }) => {
+
+    let history = useHistory()
+
+    const handleClick = () => {
+        history.push("/productPage/" + id)
+    }
     return (
         <Card>
             {console.log(`title`, title)}
             <ProductImg src={image} alt="" />
             <Title>{title}</Title>
             <Prize>€{price}</Prize>
+            <DetailsButton onClick={handleClick}>Details</DetailsButton>
         </Card>
     );
 }

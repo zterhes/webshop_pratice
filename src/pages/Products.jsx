@@ -22,21 +22,22 @@ const Products = () => {
         <>
             <h1>Products</h1>
             <ProdWrapper>
-            {products ? (
-                products.map(product => (
-                    <ProductCard
-                        category={product.category}
-                        title={product.title}
-                        description={product.description}
-                        image={product.image}
-                        price={product.price}
-                        key={product.id} 
+                {products ? (
+                    products.map(product => (
+                        <ProductCard
+                            id={product.id}
+                            category={product.category}
+                            title={product.title}
+                            description={product.description}
+                            image={product.image}
+                            price={product.price}
+                            key={product.id}
                         />
-                ))
-            ) : (
-                <h1>kapcsolati hiba</h1>
-            )
-            }
+                    ))
+                ) : (
+                    <h1>kapcsolati hiba</h1>
+                )
+                }
             </ProdWrapper>
         </>
     );
