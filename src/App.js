@@ -8,16 +8,21 @@ import {
 
 import Home from './pages/Home'
 import Menubar from './components/MenuBar'
+import Products from './pages/Products'
+import About from "./pages/About";
 
 function App() {
   return (
     <Router>
       <Menubar/>
       <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
         <Route path="/products">
+          <Products />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
           <Home />
         </Route>
       </Switch>
